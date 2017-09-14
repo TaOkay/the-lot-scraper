@@ -1,0 +1,23 @@
+{
+  "name": "the-lot-scraper",
+  "version": "1.0.0",
+  "description": "Scrapes the OTG The Lot website to see which trucks are present.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TaOkay/the-lot-scraper.git"
+  },
+  "author": "Darin Fontes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TaOkay/the-lot-scraper/issues"
+  },
+  "homepage": "https://github.com/TaOkay/the-lot-scraper#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.81.0"
+  }
+}
