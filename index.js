@@ -1,14 +1,14 @@
 var page = new WebPage();
 
-page.open("http://lanyrd.com/places/oxfordshire/", function(){
-  var events = page.evaluate(function(){
-    return $('.vevent .summary').map(function(e){
+page.open("https://offthegrid.com/event/the-lot/2017-9-15-11am", function(){
+  var vendors = page.evaluate(function(){
+    return $('.vendors-grid vendors-grid-compact grid-cards-get-mini').map(function(e){
       return '* ' + this.innerText
     }).toArray().join('\n');
   });
 
-  console.log('Upcoming Events in Oxfordshire:');
-  console.log(events);
+  console.log('Food trucks at The Lot today:');
+  console.log(vendors);
 
   phantom.exit();
 });
