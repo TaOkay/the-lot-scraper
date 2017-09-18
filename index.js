@@ -12,8 +12,9 @@ page.open(url, function(status) {
     while (!vendors) {
       vendors = page.evaluate(function() {
         return $("li.grid-item-card div.content-wrap").map(function() {
-          // TODO  - Add in the category in parens
-          return '* ' + this.innerText;
+          var name = $("h3", this)[0].innerText;
+          var cat = $("span", this)[0].innerText;
+          return '* ' + name + " (" + cat + ")";
         }).toArray().join('\n');
       });
     
