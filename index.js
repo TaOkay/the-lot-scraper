@@ -1,16 +1,16 @@
-var page = new WebPage();
-var url = '';
-var retryCount = 100;
+var PAGE = new WebPage();
+var URL = '';
+var RETRYCOUNT = 100;
 
-// TODO - Calculate url based on current date
-url = 'https://offthegrid.com/event/the-lot/2017-9-20-11am';
+// TODO - Calculate URL based on current date
+URL = 'https://offthegrid.com/event/the-lot/2017-9-20-11am';
 
-page.open(url, function(status) {
+PAGE.open(URL, function(status) {
   if (status === 'success') {
     var vendors;
     var count = 0;
     while (!vendors) {
-      vendors = page.evaluate(function() {
+      vendors = PAGE.evaluate(function() {
         return $("li.grid-item-card div.content-wrap").map(function() {
           var name = $("h3", this)[0].innerText;
           var cat = $("span", this)[0].innerText;
@@ -19,8 +19,8 @@ page.open(url, function(status) {
       });
     
       count++;
-      if (count > retryCount && !vendors) {
-        vendors = "Couldn't load anything after " + retryCount + " tries.";
+      if (count > RETRYCOUNT && !vendors) {
+        vendors = "Couldn't load anything after " + RETRYCOUNT + " tries.";
       }
     };
 
@@ -32,6 +32,6 @@ page.open(url, function(status) {
   phantom.exit();
 });
 
-page.onConsoleMessage = function (msg, line, source) {
+PAGE.onConsoleMessage = function (msg, line, source) {
   console.log('console> ' + msg);
 };
