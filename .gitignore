@@ -3,6 +3,7 @@
 *.dev
 .DS_Store
 launch.json
+phantomjs.exe
 
 # Docker
 Dockerfile
